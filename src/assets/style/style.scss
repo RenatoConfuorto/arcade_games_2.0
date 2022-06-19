@@ -1,0 +1,49 @@
+@import 'variables.scss';
+@import "~@fontsource/press-start-2p/index.css"; 
+
+*{ //reset
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $bg-color;
+  font-family: 'Press Start 2P', cursive;
+
+  color: #ffffff;
+  line-height: 1.4;
+}
+
+.container{
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+img{
+  max-width: 100%;
+}
+
+ul{
+  list-style-type: nome;
+
+  li{
+    text-align: center;
+    margin-bottom: 16px;
+
+    a{
+      color: #ffffff;
+      text-decoration: none;
+
+      &:hover{
+        color: $accent-color;
+      }
+    }
+  }
+}
+
+
