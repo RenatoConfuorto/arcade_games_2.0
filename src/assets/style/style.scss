@@ -29,7 +29,7 @@ img{
 }
 
 ul{
-  list-style-type: nome;
+  list-style-type: none;
 
   li{
     text-align: center;
@@ -45,5 +45,17 @@ ul{
     }
   }
 }
+
+.game-versions-list{
+  font-size: 30px;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 

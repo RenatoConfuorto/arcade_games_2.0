@@ -32,8 +32,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/style/style.scss";
-@import "../assets/style/variables.scss";
-@import "~@fontsource/press-start-2p/index.css"; 
 
 </style>

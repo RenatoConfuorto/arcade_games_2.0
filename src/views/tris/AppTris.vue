@@ -1,21 +1,38 @@
 <template>
-  <h1>Tris</h1>
+  <div>
+    <AppGameVersionsList :gameVersions="gameArray"/>
+  </div>
 </template>
 
 <script>
-export default {
-  data(){
-    return{
-      name: 'Arcade Mania - Tris',
-    }
-  },
-  created(){
-    document.title = this.name;
-  }
+import AppGameVersionsList from "../../components/AppGameVersionsList.vue";
 
-}
+export default {
+  components: {
+    AppGameVersionsList,
+  },
+  data() {
+    return {
+      gameArray: {
+        name: "Arcade Mania - Tris",
+        links: [
+          {
+            path: "",
+            text: "SinglePlayer",
+          },
+          {
+            path: "",
+            text: "MultiPlayer",
+          },
+        ],
+      },
+    };
+  },
+  created() {
+    document.title = this.name;
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-
 </style>
