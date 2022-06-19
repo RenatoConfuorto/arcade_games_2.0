@@ -17,7 +17,7 @@ export default {
         name: "Arcade Mania - Tris",
         links: [
           {
-            path: "",
+            path: "/tris/singleplayer",
             text: "SinglePlayer",
           },
           {

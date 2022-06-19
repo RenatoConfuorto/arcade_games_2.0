@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import AppHome from '../views/AppHome.vue'
 import AppTris from '../views/tris/AppTris.vue'
+import AppTrisSp from '../views/tris/AppTrisSp.vue'
 
 Vue.use(VueRouter)
 
@@ -20,6 +21,14 @@ const routes = [
     component: AppTris,
     meta: {
       title: 'Arcade Mania - Tris',
+    }
+  },
+  {
+    path: '/tris/singleplayer',
+    name: 'tris singleplayer',
+    component: AppTrisSp,
+    meta: {
+      title: 'Arcade Mania - Tris - SP',
     }
   },
 ]

@@ -2,7 +2,7 @@
   <div class="game-versions-list">
     <ul>
       <li v-for="(item, index) in links" :key="index">
-        <router-link to="item.path">{{ item.text }}</router-link>
+        <router-link :to="item.path">{{ item.text }}</router-link>
       </li>
     </ul>
   </div>
