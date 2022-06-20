@@ -58,7 +58,29 @@ ul{
 }
 
 //STRUTTURA COMUNE DEI GIOCHI
+.board{
+  display: flex;
+}
 
+.game-area{
+  padding: 12px;
+  position: relative;
+}
+
+.game-data{
+  padding: 12px;
+  width: 240px;
+}
+
+h1{
+  font-size: 34px;
+  margin-bottom: 16px;
+}
+
+p{
+  font-size: 16px;
+  margin-bottom: 20px;
+}
 
 
 

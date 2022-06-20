@@ -3,7 +3,11 @@
     <AppLoader v-if="loading"/>
     <!-- impostare la grandezza al 100% per il loader -->
     <div class="board" v-else>
-      <div class="game-area"></div>
+      <div class="game-area">
+        <div id="grid">
+          <div class="cell" v-for="n in 9" :key="n"></div>
+        </div>
+      </div>
       <AppGameData :gameData="dataObject"/>
     </div>
   </div>
@@ -41,5 +45,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$cell-size: 120px;
+$gutter: 60px;
 
+#grid{
+  width: calc(($cell-size * 3 ) + $gutter);
+  height: calc(($cell-size * 3 ) + $gutter);
+
+  // border: 1px solid white;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-between;
+
+  .cell{
+    width: $cell-size;
+    height: $cell-size;
+
+    border: 4px solid white;
+    cursor: pointer;
+    font-size: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 </style>

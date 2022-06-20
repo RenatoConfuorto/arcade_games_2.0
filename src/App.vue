@@ -6,5 +6,6 @@
 
 <style lang="scss">
 @import 'assets/style/style.scss';
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 </style>
