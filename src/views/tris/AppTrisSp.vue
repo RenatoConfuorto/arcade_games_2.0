@@ -16,7 +16,6 @@
 import axios from "axios";
 import AppLoader from "../../components/AppLoader.vue";
 import AppGameData from "../../components/AppGameData.vue";
-import server from '../../../server-address.js';
 
 export default {
   name: "AppTrisSp",
@@ -48,7 +47,6 @@ export default {
   },
   methods: {
     click(event) {
-      console.log(this);
       const cell = event.target;
       const index = this.cells.indexOf(cell);
       if (this.cellSigns[index]) return; //bloccare se già c'è un segno
@@ -63,7 +61,6 @@ export default {
       if(!this.checkVictory()){
         setTimeout(this.computerSign, 500);
       }
-      console.log("segno");
     },
 
     computerSign() {
@@ -160,18 +157,18 @@ export default {
       
       if (this.checkVictory()) {
         this.$parent.showAlert(`${this.sign} ha vinto`);
-        console.log(`${this.sign} ha vinto`);
+        // console.log(`${this.sign} ha vinto`);
       } else if (this.turn === 9) {
         this.$parent.showAlert('Pareggio');
-        console.log("pareggio");
+        // console.log("pareggio");
       }
 
     },
   },
   created() {
-    console.log(server.address);
+    // console.log(server.address);
     axios
-      .get(`${server.address}/arcade_games_2.0/src/assets/php/server.php`, {
+      .get(`${this.$parent.serverAddress}/arcade_games_2.0/src/assets/php/server.php`, {
         params: { query: this.dataKey },
       })
       .then((resp) => {
@@ -183,7 +180,7 @@ export default {
   updated() {
     const nodeListCells = this.$el.querySelectorAll(".cell");
     this.cells = Array.from(nodeListCells); //trasformare laa nodeList in un array
-    console.log(this.cells);
+    // console.log(this.cells);
   },
 };
 </script>

@@ -6,6 +6,11 @@
 
 <script>
 export default {
+  data(){
+    return{
+      serverAddress: 'http://192.168.1.113:80',
+    }
+  },
   methods: {
     showAlert(message) {
       const gameArea = this.$el.querySelector(".game-area");

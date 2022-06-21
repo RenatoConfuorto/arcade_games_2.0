@@ -21,7 +21,7 @@ export default {
             text: "SinglePlayer",
           },
           {
-            path: "",
+            path: "/tris/multiplayer",
             text: "MultiPlayer",
           },
         ],
