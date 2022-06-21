@@ -58,8 +58,9 @@ export default {
       this.turn++;
       this.afterSign();
       this.computerTurn = true;
-
-      setTimeout(this.computerSign, 500);
+      if(!this.checkVictory()){
+        setTimeout(this.computerSign, 500);
+      }
       console.log("segno");
     },
 
@@ -151,16 +152,15 @@ export default {
           return true;
         }
       }
-      return false;
     },
 
     afterSign() {
       
       if (this.checkVictory()) {
-        //sign ha vinto
+        this.$parent.showAlert(`${this.sign} ha vinto`);
         console.log(`${this.sign} ha vinto`);
       } else if (this.turn === 9) {
-        //pareggio
+        this.$parent.showAlert('Pareggio');
         console.log("pareggio");
       }
 

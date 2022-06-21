@@ -82,6 +82,26 @@ p{
   margin-bottom: 20px;
 }
 
+//ALERT
+
+.game-alert{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-message{
+    font-size: 40px;
+    padding: 20px;
+    background-color: $accent-color;
+  }
+}
+
 
 
 
