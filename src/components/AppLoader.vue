@@ -1,6 +1,8 @@
 <template>
   <div class="loader">
-    <i class="fas fa-spinner"></i>
+    <div class="icon-wrapper">
+      <i class="fas fa-spinner"></i>
+    </div>
   </div>
 </template>
 
@@ -15,18 +17,21 @@ export default {};
 
   position: relative;
 
-
-  i{
+  .icon-wrapper {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3rem;
 
-    animation-timing-function: linear;
-    animation-name: loaderRotation;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
+    i{
+      animation-timing-function: linear;
+      animation-name: loaderRotation;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+
+    }
+
   }
 
   @keyframes loaderRotation {
