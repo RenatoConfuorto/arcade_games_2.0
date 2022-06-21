@@ -16,6 +16,7 @@
 import axios from "axios";
 import AppLoader from "../../components/AppLoader.vue";
 import AppGameData from "../../components/AppGameData.vue";
+import server from '../../../server-address.js';
 
 export default {
   name: "AppTrisSp",
@@ -47,6 +48,7 @@ export default {
   },
   methods: {
     click(event) {
+      console.log(this);
       const cell = event.target;
       const index = this.cells.indexOf(cell);
       if (this.cellSigns[index]) return; //bloccare se già c'è un segno
@@ -167,8 +169,9 @@ export default {
     },
   },
   created() {
+    console.log(server.address);
     axios
-      .get("http://localhost/arcade_games_2.0/src/assets/php/server.php", {
+      .get(`${server.address}/arcade_games_2.0/src/assets/php/server.php`, {
         params: { query: this.dataKey },
       })
       .then((resp) => {
