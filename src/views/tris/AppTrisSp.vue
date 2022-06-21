@@ -58,13 +58,13 @@ export default {
       this.turn++;
       this.afterSign();
       this.computerTurn = true;
-      if(!this.checkVictory()){
+      if (!this.checkVictory()) {
         setTimeout(this.computerSign, 500);
       }
     },
 
     computerSign() {
-      if(this.turn === 9)return //il gioco è finito
+      if (this.turn === 9) return; //il gioco è finito
       this.sign = "O";
 
       for (let i = 0; i < this.winningCombinations.length; i++) {
@@ -154,23 +154,24 @@ export default {
     },
 
     afterSign() {
-      
       if (this.checkVictory()) {
         this.$parent.showAlert(`${this.sign} ha vinto`);
         // console.log(`${this.sign} ha vinto`);
       } else if (this.turn === 9) {
-        this.$parent.showAlert('Pareggio');
+        this.$parent.showAlert("Pareggio");
         // console.log("pareggio");
       }
-
     },
   },
   created() {
     // console.log(server.address);
     axios
-      .get(`${this.$parent.serverAddress}/arcade_games_2.0/src/assets/php/server.php`, {
-        params: { query: this.dataKey },
-      })
+      .get(
+        `${this.$parent.serverAddress}/arcade_games_2.0/src/assets/php/server.php`,
+        {
+          params: { query: this.dataKey },
+        }
+      )
       .then((resp) => {
         // console.log(resp.data);
         this.dataObject = resp.data;
@@ -186,30 +187,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$cell-size: 120px;
-$gutter: 60px;
 
-#grid {
-  width: calc(($cell-size * 3) + $gutter);
-  height: calc(($cell-size * 3) + $gutter);
-
-  // border: 1px solid white;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: space-between;
-
-  .cell {
-    width: $cell-size;
-    height: $cell-size;
-
-    border: 4px solid white;
-    cursor: pointer;
-    font-size: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
+@import '../../assets/style/tris_style.scss';
 </style>

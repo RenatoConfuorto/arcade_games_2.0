@@ -107,30 +107,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$cell-size: 120px;
-$gutter: 60px;
+@import '../../assets/style/tris_style.scss';
 
-#grid {
-  width: calc(($cell-size * 3) + $gutter);
-  height: calc(($cell-size * 3) + $gutter);
-
-  // border: 1px solid white;
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
-  justify-content: space-between;
-
-  .cell {
-    width: $cell-size;
-    height: $cell-size;
-
-    border: 4px solid white;
-    cursor: pointer;
-    font-size: 60px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-}
 </style>

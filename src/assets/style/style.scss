@@ -55,6 +55,72 @@ ul{
   justify-content: center;
   align-items: center;
 
+  ul{
+
+    li{
+
+      .info-button{
+        display: none;
+      }
+    }
+  }
+ 
+}
+
+@media screen and (max-width: 450px) {
+  .game-versions-list{
+    font-size: 25px;
+    position: relative;
+
+    ul{
+
+      li{
+        display: flex;
+        align-items: center;
+
+        .game-info{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          border: 2px solid black;
+          background-color:$accent-color;
+          min-width: 75%;
+          display: none;
+
+          h2{
+            border-bottom: 1px solid black;
+            padding: 10px 5px;
+          }
+
+          p{
+            padding: 12px 8px;
+            line-height: 1.6;
+          }
+
+          &.active{
+            display: block;
+          }
+
+          span{
+            font-size: 16px;
+            padding: 3px;
+            margin-left: 90%;
+          }
+
+        }
+        
+        .info-button{
+          display: inline-block;
+          border: 2px solid white;
+          margin-left: 10px;
+          padding: 7px;
+          display: inline-block;
+        }
+
+      }
+    }
+  }
 }
 
 //STRUTTURA COMUNE DEI GIOCHI

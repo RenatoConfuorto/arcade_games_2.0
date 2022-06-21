@@ -19,10 +19,14 @@ export default {
           {
             path: "/tris/singleplayer",
             text: "SinglePlayer",
+            key: 'tris_sp',
+            infoReady: false,
           },
           {
             path: "/tris/multiplayer",
             text: "MultiPlayer",
+            key: 'tris_mp',
+            infoReady: false,
           },
         ],
       },
